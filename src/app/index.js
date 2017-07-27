@@ -29,11 +29,14 @@ class TodoComponent extends React.Component{
                     <h3>Here's an example of "state"</h3>
                     <ul>
                         <li>This is going to change in 3 secs: {this.state.age}</li>
-                        <li>{this.state.todos[0]}</li>
-                        <li>{this.state.todos[1]}</li>
-                        <li>{this.state.todos[2]}</li>
-                        <li>{this.state.todos[3]}</li>
-                        <li>{this.state.todos[4]}</li>
+                        {this.state.todos.map((todo, id) => <li key={id}>{todo}</li>)}
+                        {/*
+                            <li>{this.state.todos[0]}</li>
+                            <li>{this.state.todos[1]}</li>
+                            <li>{this.state.todos[2]}</li>
+                            <li>{this.state.todos[3]}</li>
+                            <li>{this.state.todos[4]}</li>
+                        */}
                     </ul>
                 </div>
             </div>
