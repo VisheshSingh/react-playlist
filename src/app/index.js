@@ -3,14 +3,33 @@ import ReactDOM from 'react-dom';
 
 //Create component
 class TodoComponent extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            todos: ['Get up early', 'Mind your work', 'eat', 'sleep', 'repeat']
+        }
+    }
+
     render() {
         return (
             <div>
-                <h1>Welcome to ReactJs</h1>
-                <p>Here's an example of "props"</p>
-                <p><strong>Player name: </strong>{this.props.player.name}</p>
-                <p><strong>Game: </strong>{this.props.player.game}</p>
-                <p><strong>Age: </strong>{this.props.player.age}</p>
+                <div>
+                    <h1>Welcome to ReactJs</h1>
+                    <h3>Here's an example of "props"</h3>
+                    <p><strong>Player name: </strong>{this.props.player.name}</p>
+                    <p><strong>Game: </strong>{this.props.player.game}</p>
+                    <p><strong>Age: </strong>{this.props.player.age}</p>
+                </div>
+                <div id="to-do">
+                    <h3>Here's an example of "state"</h3>
+                    <ul>
+                        <li>{this.state.todos[0]}</li>
+                        <li>{this.state.todos[1]}</li>
+                        <li>{this.state.todos[2]}</li>
+                        <li>{this.state.todos[3]}</li>
+                        <li>{this.state.todos[4]}</li>
+                    </ul>
+                </div>
             </div>
         );
     }
