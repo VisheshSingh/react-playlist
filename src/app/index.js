@@ -7,7 +7,8 @@ class TodoComponent extends React.Component{
         super(props);
         this.state = {
             todos: ['Get up early', 'Mind your work', 'eat', 'sleep', 'repeat'],
-            age: 29
+            age: 29,
+            tasks: ['eat', 'sleep', 'conquer', 'repeat']
         }
     }
 
@@ -15,6 +16,13 @@ class TodoComponent extends React.Component{
         var ager = setTimeout(function() {
             this.setState({age:30});
         }.bind(this),3000);
+
+        var tasks = this.state.tasks;
+        tasks = tasks.map(function(task, id) {
+            return (
+                <TodoItem task={task} key={id} />
+            );
+        });
 
         return (
             <div>
@@ -39,6 +47,11 @@ class TodoComponent extends React.Component{
                         */}
                     </ul>
                 </div>
+                <div>
+                    <ul>
+                        {tasks}
+                    </ul>
+                </div>
             </div>
         );
     }
@@ -49,6 +62,15 @@ const myPlayer = {name: "Messi", game: "Soccer", age: "30"};
 //propTypes are used for validation and documentation
 TodoComponent.propTypes = {
     myPlayer: React.PropTypes.object
+}
+
+//create TodoItem component
+class TodoItem extends React.Component{
+    render(){
+        return (
+            <li>{this.props.task}</li>
+        );
+    }
 }
 
 ReactDOM.render(<TodoComponent player={myPlayer}/>, document.getElementById('app'));
