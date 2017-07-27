@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//Create component by React create class method
-var TodoComponent = React.createClass({
+//Create component
+class TodoComponent extends React.Component{
     render() {
         return (
-            <h1>Welcome to ReactJs</h1>
+            <div>
+                <h1>Welcome to ReactJs</h1>
+                <p>Here's an example of "props"</p>
+                <p><strong>Player name: </strong>{this.props.player.name}</p>
+                <p><strong>Game: </strong>{this.props.player.game}</p>
+                <p><strong>Age: </strong>{this.props.player.age}</p>
+            </div>
         );
     }
-});
+}
 
-ReactDOM.render(<TodoComponent/>, document.getElementById('app'));
+const myPlayer = {name: "Messi", game: "Soccer", age: "30"};
+
+//propTypes are used for validation and documentation
+TodoComponent.propTypes = {
+    myPlayer: React.PropTypes.object
+}
+
+ReactDOM.render(<TodoComponent player={myPlayer}/>, document.getElementById('app'));
