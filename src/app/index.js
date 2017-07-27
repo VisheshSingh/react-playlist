@@ -6,11 +6,16 @@ class TodoComponent extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            todos: ['Get up early', 'Mind your work', 'eat', 'sleep', 'repeat']
+            todos: ['Get up early', 'Mind your work', 'eat', 'sleep', 'repeat'],
+            age: 29
         }
     }
 
     render() {
+        var ager = setTimeout(function() {
+            this.setState({age:30});
+        }.bind(this),3000);
+
         return (
             <div>
                 <div>
@@ -23,6 +28,7 @@ class TodoComponent extends React.Component{
                 <div id="to-do">
                     <h3>Here's an example of "state"</h3>
                     <ul>
+                        <li>This is going to change in 3 secs: {this.state.age}</li>
                         <li>{this.state.todos[0]}</li>
                         <li>{this.state.todos[1]}</li>
                         <li>{this.state.todos[2]}</li>
