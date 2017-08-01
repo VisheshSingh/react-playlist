@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { TodoItem } from './todoItem';
+import { AddItem } from './addItem';
 require('./css/index.css');
+
 //Create component
 class TodoComponent extends React.Component{
     constructor(props){
@@ -15,6 +17,14 @@ class TodoComponent extends React.Component{
         var updatedTasks = this.state.tasks.filter((val, index) => {
             return item !== val;
         });
+        this.setState({
+            tasks: updatedTasks
+        });
+    }
+
+    add(item){
+        var updatedTasks = this.state.tasks;
+        updatedTasks.push(item);
         this.setState({
             tasks: updatedTasks
         });
@@ -35,6 +45,7 @@ class TodoComponent extends React.Component{
                     <ul>
                         {tasks}
                     </ul>
+                    <AddItem onAdd={this.add.bind(this)}/>
                 </div>
             </div>
         );

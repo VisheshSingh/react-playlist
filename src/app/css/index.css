@@ -15,7 +15,7 @@ body{
   color: #333;
 }
 
-#app p{
+#todo-list p{
   color: #777;
   font-style: italic;
 }
