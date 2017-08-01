@@ -6,6 +6,7 @@ export class AddItem extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.onAdd(this.refs.newitem.value);
+        this.refs.newitem.value="";
     }
 
     render(){

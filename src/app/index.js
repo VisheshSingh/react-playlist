@@ -12,7 +12,7 @@ class TodoComponent extends React.Component{
             tasks: ['eat', 'sleep', 'conquer', 'repeat']
         }
     }
-
+//Events
     delete(item){
         var updatedTasks = this.state.tasks.filter((val, index) => {
             return item !== val;
@@ -28,6 +28,18 @@ class TodoComponent extends React.Component{
         this.setState({
             tasks: updatedTasks
         });
+    }
+//Lifecycle methods:
+    componentWillMount(){
+        console.log("Component will mount before render");
+    }
+
+    componentDidMount(){
+        console.log("Component mounted after render");
+    }
+
+    componentWillUpdate(){
+        console.log("Component updated...");
     }
 
     render() {
