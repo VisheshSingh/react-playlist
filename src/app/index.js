@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { TodoItem } from './todoItem';
 import { AddItem } from './addItem';
+import { About } from './about';
+
+
 require('./css/index.css');
 
 //Create component
