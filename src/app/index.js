@@ -5,10 +5,28 @@ import { TodoItem } from './todoItem';
 import { AddItem } from './addItem';
 import { About } from './about';
 
+//react-router-dom
+var ReactRouter = require('react-router-dom');
+var Router = ReactRouter.BrowserRouter;
+var Route = ReactRouter.Route;
 
+//css
 require('./css/index.css');
 
 //Create component
+class TodoApp extends React.Component{
+    render(){
+        return(
+            <Router>
+                <div>
+                    <Route exact path='/' component={TodoComponent}></Route>
+                    <Route path='/about' component={About}></Route>
+                </div>
+            </Router>
+        );
+    }
+}
+
 class TodoComponent extends React.Component{
     constructor(props){
         super(props);
@@ -55,17 +73,15 @@ class TodoComponent extends React.Component{
         }.bind(this));
 
         return (
-            <div className="container">
                 <div id="todo-list">
-                    <p>Todo list for the day:</p>
+                    <h2>Todo list for the day:</h2>
                     <ul>
                         {tasks}
                     </ul>
                     <AddItem onAdd={this.add.bind(this)}/>
                 </div>
-            </div>
-        );
+            );
     }//render
 }
 
-ReactDOM.render(<TodoComponent/>, document.getElementById('app'));
+ReactDOM.render(<TodoApp/>, document.getElementById('app'));

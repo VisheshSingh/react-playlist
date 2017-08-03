@@ -15,10 +15,10 @@ body{
   color: #333;
 }
 
-#todo-list p{
+/*#todo-list p{
   color: #777;
   font-style: italic;
-}
+}*/
 
 #todo-list ul{
   list-style-type: none;
