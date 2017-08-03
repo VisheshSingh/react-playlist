@@ -24,3 +24,21 @@ body{
   list-style-type: none;
   padding: 0;
 }
+
+.active{
+    font-weight: bold;
+}
+
+.nav{
+    display: flex;
+}
+
+.nav li {
+    margin-right: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #7f4cc1;
+    font-weight: bold;
+}

@@ -9,8 +9,9 @@ import { About } from './about';
 var ReactRouter = require('react-router-dom');
 var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
-
+//var Link = require("react-router-dom").Link;
 //css
+var Nav = require('./Nav');
 require('./css/index.css');
 
 //Create component
@@ -19,6 +20,7 @@ class TodoApp extends React.Component{
         return(
             <Router>
                 <div>
+                    <Nav/>
                     <Route exact path='/' component={TodoComponent}></Route>
                     <Route path='/about' component={About}></Route>
                 </div>

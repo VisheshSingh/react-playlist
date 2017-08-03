@@ -1,4 +1,5 @@
 import React from 'react';
+//var Link = require("react-router-dom").Link;
 
 export class About extends React.Component{
     render(){
